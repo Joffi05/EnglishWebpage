@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             {/* <img src={logo} alt="Logo" style={styles.logoStyle}/> */}
-            <i className="input-group-prepend" ><FaSearch/></i>
+            <i><FaSearch/></i>
             <input style={styles.inputStyle} placeholder="Search..."></input>
         </header>
     )
