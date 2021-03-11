@@ -1,14 +1,15 @@
-import * as functions from 'firebase-functions'
-import * as admin from 'firebase-admin'
-import * as express from 'express'
-
-admin.initializeApp(functions.config().firebase)
+const admin = require('firebase-admin')
+const functions = require('firebase-functions')
 const db = admin.firestore();
+
 const postCollection = 'posts';
 
 const express = require("express")
 const PORT = process.env.PORT || 3001
 const app = express()
+const main = express()
+
+admin.initializeApp(functions.config().firebase)
 
 
 app.listen(PORT, () => {
@@ -26,7 +27,7 @@ export const webApi = functions.https.onRequest(main);
 
 
 // Create new Post
-app.post('/newPost', async (req, res) => {
+app.post('api/newPost', async (req, res) => {
   try {
     const post = {
       name: req.body['name'],
@@ -50,7 +51,7 @@ app.post('/newPost', async (req, res) => {
 
 
 // Get all posts
-app.get('/posts', async (req, res) => {
+app.get('api/posts', async (req, res) => {
   try {
     const allPosts = await db.collection(postCollection).get()
 

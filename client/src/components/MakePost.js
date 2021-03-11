@@ -1,15 +1,10 @@
 import React from 'react'
 import styles from '.././styles/MakePost.module.css'
-import firebase from 'firebase'
+import firebase from './firebase.js'
 
 function MakePost() {
 
-    const [postData, setPostData] = React.useState({
-        "name": null,
-        "date": new Date(),
-        "city": null,
-        "text": null
-    })
+    const [postData, setPostData] = React.useState('')
 
     const handleChange = (event) => {
         setPostData({
@@ -19,8 +14,11 @@ function MakePost() {
         console.log(postData)
     }
 
-    const handleClick = () => {
-
+    const handleClick = async(event) => {
+        event.preventDefault()
+        const postsRef = firebase.database().ref('posts')
+        postsRef.push(postData)
+        setPostData('')
     }
 
     return (
@@ -29,7 +27,7 @@ function MakePost() {
             <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Name" name="name"></input></li>
             <li ><textarea className={styles.PostText} onChange={handleChange} type="text" placeholder="Inhalt" name="text"></textarea></li>
             <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Stadt" name="city"></input></li>
-            <li><button onClick={handleClick}>Send</button></li> 
+            <li><button className={styles.PostButton} onClick={handleClick}>Send</button></li> 
         </div>
     )
 }
