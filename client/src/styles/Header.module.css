@@ -5,12 +5,12 @@
     margin: 0;
 }
 .logo{
-    width: 60px;
+    width: 80px;
 }
 .header input{
     padding: 15px;
     width: 30%;
-    margin: 12px;
+    margin: 15px;
     margin-left: 30%;
     position: absolute;
     font-size: 18px;
