@@ -1,5 +1,8 @@
 import React from 'react'
 import logo from '.././pngs/logo.png'
+
+
+import { FaSearch } from 'react-icons/fa'
 import styles from '.././styles/Header.module.css'
 
 const Header = () => {
