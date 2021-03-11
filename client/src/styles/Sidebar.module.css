@@ -1,0 +1,10 @@
+.Sidebar {
+    height: 100%;
+    margin-top: 0;
+    width: 20%;
+    background-color: white;
+    box-shadow: 8px 0 5px -5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    margin: 0;
+
+}
