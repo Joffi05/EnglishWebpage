@@ -5,7 +5,9 @@ import MakePost from './MakePost.js'
 const Sidebar = () => {
     return (
         <div className={styles.Sidebar}>
-            <MakePost/>
+            <form className={styles.Form}>
+                <MakePost/>
+            </form>
         </div>
     )
 }
