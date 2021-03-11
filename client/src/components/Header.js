@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header style={HeaderStyle}>
             {/* <img src={logo} alt="Logo" style={LogoStyle}/> */}
-            <i className="input-group-prepend"><FaSearch/></i>
+            {/* <i className="input-group-prepend"><FaSearch/></i> */}
             <input style={InputStyle}placeholder="Search..."></input>
         </header>
     )
