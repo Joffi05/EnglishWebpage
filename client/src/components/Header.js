@@ -1,11 +1,11 @@
 import React from 'react'
-import logo from './Logo.jpg'
-import { FaSearch } from 'react-icons/fa'
+// import logo from './Logo.jpg'
+// import { FaSearch } from 'react-icons/fa'
 
 const Header = () => {
     return (
         <header style={HeaderStyle}>
-            <img src={logo} alt="Logo" style={LogoStyle}/>
+            {/* <img src={logo} alt="Logo" style={LogoStyle}/> */}
             <i className="input-group-prepend"><FaSearch/></i>
             <input style={InputStyle}placeholder="Search..."></input>
         </header>
