@@ -24,11 +24,12 @@ function MakePost() {
     }
 
     return (
-        <div>
-            <input onChange={handleChange} type="text" placeholder="Name" name="name"></input>
-            <input onChange={handleChange} type="text" placeholder="Inhalt" name="text"></input>
-            <input onChange={handleChange} type="text" placeholder="Stadt" name="city"></input>
-            <button onClick={handleClick}>Send</button>
+        <div className={styles.PostInput}>
+            <h1>Design the future</h1>
+            <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Name" name="name"></input></li>
+            <li ><textarea className={styles.PostText} onChange={handleChange} type="text" placeholder="Inhalt" name="text"></textarea></li>
+            <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Stadt" name="city"></input></li>
+            <li><button onClick={handleClick}>Send</button></li> 
         </div>
     )
 }
