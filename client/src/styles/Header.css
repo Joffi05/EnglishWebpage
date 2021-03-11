@@ -4,7 +4,7 @@ header{
     padding: 1px;
     margin: 0;
 }
-logo{
+.logo{
     width: 60px;
 }
 header input{

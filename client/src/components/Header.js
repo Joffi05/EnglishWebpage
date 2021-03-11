@@ -6,7 +6,7 @@ import styles from '.././styles/Header.css'
 const Header = () => {
     return (
         <header className={styles.header}>
-            <img src={logo} alt="Logo" style={styles.logoStyle}/>
+            <img src={logo} alt="Logo" className="logo"/>
             <i className="input-group-prepend" ><FaSearch/></i>
             <input className={styles.input} placeholder="Search..."></input>
         </header>
