@@ -1,4 +1,4 @@
-header{
+.header{
     background-color: white;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
     padding: 1px;
@@ -7,7 +7,7 @@ header{
 .logo{
     width: 60px;
 }
-header input{
+.header input{
     padding: 15px;
     width: 30%;
     margin: 12px;
