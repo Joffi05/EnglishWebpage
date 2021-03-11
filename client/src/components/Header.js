@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from './Logo.jpg'
 import { FaSearch } from 'react-icons/fa'
 const Header = () => {
     return (
