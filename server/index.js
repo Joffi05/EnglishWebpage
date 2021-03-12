@@ -24,8 +24,6 @@ const {
 } = faunadb.query
 
 
-
-
 // GET endpoints
 
 app.get('/posts', async (req, res) => {
