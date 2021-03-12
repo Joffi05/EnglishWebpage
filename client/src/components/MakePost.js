@@ -4,7 +4,12 @@ import styles from '.././styles/MakePost.module.css'
 
 function MakePost() {
 
-    const [postData, setPostData] = React.useState('')
+    const [postData, setPostData] = React.useState({
+        name: String,
+        date: new Date(),
+        city: String,
+        text: String
+    })
 
     const handleChange = (event) => {
         setPostData({
@@ -30,7 +35,12 @@ function MakePost() {
             input => (input.value = "")
         )
 
-        setPostData('')
+        setPostData({
+            name: String,
+            date: new Date(),
+            city: String,
+            text: String
+        })
     }
 
     return (
