@@ -1,12 +1,17 @@
 import React from 'react'
 import styles from '.././styles/News.module.css'
+import Typewriter from 'typewriter-effect'
 
 const News = () => {
     return (
         <form>
             <h1 className={styles.Header}></h1>
             <div className={styles.News1}>
-                Feature is coming soon...
+                <Typewriter 
+                onInit={(typewriter) =>{
+                    typewriter.typeString("Feature is coming soon...").start();
+                }}
+                />
             </div>
             <div className={styles.News2}>
                 
