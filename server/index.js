@@ -31,19 +31,18 @@ const {
 app.get('/posts', async (req, res) => {
 
   const doc = await client.query(
-    Get(Ref(Collection("posts"), "292877210325352967"))
+    Get(Ref(Collection("posts"), "292888013360333313"))
   )
   .catch(e => res.send(e))
 
-  res.send(doc)
+  res.json({posts: doc})
 })
 
 
 // POST endpoints
 
-app.post('/newPost', async (req, res) => {
-
-  console.log(req.body)
+app.post('/newPost', express.json(), async (req, res) => {
+  const data = req.body
 
   const doc = await client.query(
     Create(
@@ -51,13 +50,10 @@ app.post('/newPost', async (req, res) => {
       { data }
     )
   )
-  
+  .catch(e => res.send(e))
+
   res.send(doc)
-}
-
-
-
-
+})
 
 
 
