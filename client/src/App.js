@@ -9,8 +9,27 @@ function App() {
     <div className="App">      
       <Header/>
       <Sidebar/>
-      <Footer/>
       <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <ContentForm/>
+      <Footer/>
     </div>
   );
 }
