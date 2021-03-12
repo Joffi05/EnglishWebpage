@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '.././styles/MakePost.module.css'
-import firebase from './firebase.js'
+
 
 function MakePost() {
 
@@ -16,9 +16,6 @@ function MakePost() {
 
     const handleClick = async(event) => {
         event.preventDefault()
-        const postsRef = firebase.database().ref('posts')
-        postsRef.push(postData)
-        setPostData('')
     }
 
     return (

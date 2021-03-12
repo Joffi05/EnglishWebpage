@@ -1,15 +1,8 @@
-const admin = require('firebase-admin')
-const functions = require('firebase-functions')
-const db = admin.firestore();
-
-const postCollection = 'posts';
-
 const express = require("express")
 const PORT = process.env.PORT || 3001
 const app = express()
-const main = express()
 
-admin.initializeApp(functions.config().firebase)
+
 
 
 app.listen(PORT, () => {
@@ -17,9 +10,6 @@ app.listen(PORT, () => {
 });
 
 
-
-//define google cloud function name
-export const webApi = functions.https.onRequest(main);
 
 
 
