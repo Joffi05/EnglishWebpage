@@ -1,15 +1,10 @@
 import React from 'react'
 import styles from '.././styles/MakePost.module.css'
-import firebase from 'firebase'
+
 
 function MakePost() {
 
-    const [postData, setPostData] = React.useState({
-        "name": null,
-        "date": new Date(),
-        "city": null,
-        "text": null
-    })
+    const [postData, setPostData] = React.useState('')
 
     const handleChange = (event) => {
         setPostData({
@@ -19,8 +14,8 @@ function MakePost() {
         console.log(postData)
     }
 
-    const handleClick = () => {
-
+    const handleClick = async(event) => {
+        event.preventDefault()
     }
 
     return (
