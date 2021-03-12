@@ -20,7 +20,10 @@ const {
   Lambda,
   Var,
   Join,
-  Ref
+  Ref,
+  Call,
+  Function: fn,
+  Map: mp
 } = faunadb.query
 
 
@@ -29,13 +32,17 @@ const {
 app.get('/posts', async (req, res) => {
 
   const doc = await client.query(
-    Get(Ref(Collection("posts"), "292888013360333313"))
+    mp(
+      Paginate(
+        Match(Index("all_depts"))
+      ),
+      Lambda("X", Get(Var("X")))
+    )
   )
   .catch(e => res.send(e))
 
   res.json({posts: doc})
 })
-
 
 // POST endpoints
 
