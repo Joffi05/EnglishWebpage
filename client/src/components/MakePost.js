@@ -5,10 +5,10 @@ import styles from '.././styles/MakePost.module.css'
 function MakePost() {
 
     const [postData, setPostData] = React.useState({
-        name: String,
+        name: "",
         date: new Date(),
-        city: String,
-        text: String
+        city: "",
+        text: ""
     })
 
     const handleChange = (event) => {
@@ -34,6 +34,13 @@ function MakePost() {
         Array.from(document.querySelectorAll('textarea')).forEach(
             input => (input.value = "")
         )
+
+        if (postData.text === "" || postData.text === String) {
+            alert("Empty")
+        }
+        else {
+            alert("Successfull")
+        }
 
         setPostData({
             name: String,

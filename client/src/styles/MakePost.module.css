@@ -39,8 +39,12 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    background-color: rgb(146, 141, 141);
 }
 .PostButton:hover{
-    background-color:rgba(222,222,222);
+    background-color:rgb(73, 69, 69);
     font-weight: 800;
+}
+.PostButton:disabled{
+    background-color:rgb(190, 130, 130)
 }
