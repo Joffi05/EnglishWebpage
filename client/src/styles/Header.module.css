@@ -19,4 +19,5 @@ img input .header{
     margin-left: 30%;
     position: absolute;
     font-size: 18px;
+    outline: none;
 }

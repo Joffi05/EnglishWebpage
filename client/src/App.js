@@ -8,7 +8,7 @@ import firebase from 'firebase'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App">      
       <Header/>
       <Sidebar/>
     </div>
