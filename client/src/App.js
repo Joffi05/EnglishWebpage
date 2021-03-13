@@ -16,14 +16,16 @@ function App() {
 
   const FuncEnter = () => {
     setEnter(true)
+    console.log('Enter')
   }
 
   return (
     <div className="App">      
       <Header setSearch={FuncSearch} setEnter={FuncEnter}/>
       <Sidebar/>
-      <ContentForm searchFor={search}/>
+      <ContentForm searchFor={search} enter={enter}/>
       <Footer/> 
+      {/* <Footer/> */}
     </div>
   );
 }
