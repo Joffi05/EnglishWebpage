@@ -12,12 +12,16 @@ const Header = (props) => {
         props.setSearch(search)
     }
 
+    const handleSubmit = () => {
+        
+    }
+
 
 
     return (
         <header className={styles.header}>
             <img className={styles.logo} src={logo} alt="Logo"/>
-            <input className={styles.input} onChange={handleChange} placeholder="Search..."></input>
+            <input className={styles.input} onChange={handleChange} onSubmit={handleSubmit} placeholder="Search..."></input>
         </header>
     )
 }

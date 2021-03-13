@@ -14,13 +14,12 @@ const ContentForm = (props) => {
         .then(() => setIsLoading(false))
     }
 
-    
     React.useEffect(() => {
         rerenderPosts()
-    }, [])
+    }, [props.searchFor])
 
     
-
+    
     let formattedPosts
 
     if (!isLoading) {
