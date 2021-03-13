@@ -17,7 +17,6 @@ const ContentForm = () => {
     let formattedPosts
 
     if (!isLoading) {
-
         // gigantic map function to wrap each post
         formattedPosts = posts.map(
             (data, index) =>
@@ -28,18 +27,20 @@ const ContentForm = () => {
                         </div>
                         
                         <h1 className={styles.Titel}>{data.title}</h1> {/*Der Header ist für den Titel geacht*/}
-                        <h2 className={styles.Name}>{data.name}</h2> {/*Der Header ist für den Namen geacht*/}
-                        <h3 className={styles.City}>{data.city}</h3> {/*Der Header ist für die Stadt geacht*/}
+                        <h2 className={styles.Name}>{data.name ? data.name : null}</h2> {/*Der Header ist für den Namen geacht*/}
+                        <h3 className={styles.City}>{data.city ? data.city : null}</h3> {/*Der Header ist für die Stadt geacht*/}
                         <div className={styles.Text}>{data.text}</div>
                     </form>
                 </div>
         )
+
+        posts.forEach((post) => console.log(post.data))
     
-        console.log(formattedPosts)
-        console.log(posts)
+        // console.log(formattedPosts)
+        // console.log(posts)
 
         return (
-            {formattedPosts}
+            [formattedPosts]
         )
     }
     else{
