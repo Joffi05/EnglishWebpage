@@ -5,6 +5,11 @@ import Footer from './components/Footer.js'
 import ContentForm from './components/ContentForm.js'
 
 function App() {
+
+  const update = () => {
+
+  }
+
   return (
     <div className="App">      
       <Header/>

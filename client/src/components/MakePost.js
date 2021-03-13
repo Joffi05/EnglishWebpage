@@ -3,7 +3,7 @@ import styles from '.././styles/MakePost.module.css'
 import FlashMessage from 'react-flash-message'
 
 
-function MakePost() {
+function MakePost(props) {
 
     const [postData, setPostData] = React.useState({
         name: String,
@@ -35,9 +35,10 @@ function MakePost() {
                 body: JSON.stringify(postData)
             }, [])
             .then(response => {
-                if (response.data === "Success") {
+                if (response) {
                     //popup success
                     //reload posts component
+                    window.location.reload()
                 }
                 else {
                     //popup unknonwn error

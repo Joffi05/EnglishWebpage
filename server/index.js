@@ -61,7 +61,7 @@ app.post('/newPost', express.json(), async (req, res) => {
   )
   .catch(e => res.send(e))
 
-  res.send(doc)
+  res.send("Success")
 })
 
 
