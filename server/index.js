@@ -45,8 +45,6 @@ app.get('/posts', async (req, res) => {
   // console.log(doc.data[0].data)
   const docData = doc.data
 
-  console.log(docData)
-
   res.json({posts: docData})
 })
 

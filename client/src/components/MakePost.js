@@ -1,15 +1,17 @@
 import React from 'react'
 import styles from '.././styles/MakePost.module.css'
+import FlashMessage from 'react-flash-message'
 
 
 function MakePost() {
 
     const [postData, setPostData] = React.useState({
-        name: "",
+        name: String,
         date: new Date(),
-        city: "",
-        title: "",
-        text: ""
+        city: String,
+        title: String,
+        text: String
+        //nochne id für posts einbauen
     })
 
     const handleChange = (event) => {
@@ -22,26 +24,34 @@ function MakePost() {
     const handleClick = async(event) => {
         event.preventDefault()
 
-        fetch('/newPost', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(postData)
-        }, [])
-        .then(response => console.log(response)) // hier popup für erfolgreich
 
+        if (postData.text === String || postData.title === String) {
+            //popup "fill at least text and title"
+        }
+        else {
+            fetch('/newPost', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(postData)
+            }, [])
+            .then(response => {
+                if (response.data === "Success") {
+                    //popup success
+                    //reload posts component
+                }
+                else {
+                    //popup unknonwn error
+                }
+            }) 
+        }
+
+        //deleting evidence of made post
         Array.from(document.querySelectorAll('input')).forEach(
             input => (input.value = "")
         )
         Array.from(document.querySelectorAll('textarea')).forEach(
             input => (input.value = "")
         )
-
-        if ((postData.text === "" || postData.text === String) || (postData.title === "" || postData.title === String) ) {
-            alert("Empty")
-        }
-        else {
-            alert("Successfull")
-        }
 
         setPostData({
             name: String,
