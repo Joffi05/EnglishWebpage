@@ -6,14 +6,20 @@ const ContentForm = (props) => {
     const [posts, setPosts] = React.useState(null)
     const [isLoading, setIsLoading] = React.useState(true)
 
-
     //einbauen, dass er immer nur 10 fetched !!WICHTIG
-    React.useEffect(() => {
-        fetch('/posts')
+    const rerenderPosts = async () => {
+        fetch('/posts/' + props.searchFor)
         .then(res => res.json())
         .then((data) => setPosts(data.posts))
         .then(() => setIsLoading(false))
+    }
+
+    
+    React.useEffect(() => {
+        rerenderPosts()
     }, [])
+
+    
 
     let formattedPosts
 
@@ -55,11 +61,6 @@ const ContentForm = (props) => {
             </div>
         )
     }
-    
-    
-
-
-
 }
 
 export default ContentForm

@@ -29,7 +29,13 @@ const {
 
 // GET endpoints
 
-app.get('/posts', async (req, res) => {
+app.get('/posts/:content', async (req, res) => {
+
+  // Get(Ref(Collection('posts), req.params.content))
+
+  console.log(req.params.content)
+
+
 
   const doc = await client.query(
     mp(

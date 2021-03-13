@@ -6,15 +6,18 @@ import ContentForm from './components/ContentForm.js'
 
 function App() {
 
-  const update = () => {
+  const [search, setSearch] = React.useState(null)
 
+  const FuncSearch = (data) => {
+    setSearch(data)
   }
+
 
   return (
     <div className="App">      
-      <Header/>
+      <Header setSearch={FuncSearch}/>
       <Sidebar/>
-      <ContentForm/>
+      <ContentForm searchFor={search}/>
       {/* <Footer/> */}
     </div>
   );
