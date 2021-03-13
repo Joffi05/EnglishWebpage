@@ -13,3 +13,9 @@
     background: rgba(217,217,217,0.5);
     height: 45%;
 }
+.News{
+    margin:0;
+    height: 55%; 
+    background: black;
+    padding: 10px;
+}

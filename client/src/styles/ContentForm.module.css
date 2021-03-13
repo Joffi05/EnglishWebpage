@@ -48,3 +48,7 @@
 .Contribute:hover{
     background-color:rgba(50, 205, 50, 0.5); 
 }
+.Form:hover{
+    padding: 50px;
+    margin-right: 12%;
+}
