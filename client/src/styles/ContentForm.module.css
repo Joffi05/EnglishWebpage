@@ -40,10 +40,12 @@
     background-color: white;
     display: inline;
     text-align:right;
-    padding: 10px;
+    padding: 3px;
     border-radius:7px;
     border:none;
     outline: none;
+    width: 5%;
+    box-shadow: none;
 }
 .Contribute:hover{
     background-color:rgba(50, 205, 50, 0.5); 

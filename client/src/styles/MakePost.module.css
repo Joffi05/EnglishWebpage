@@ -59,11 +59,23 @@
 .PostButton:disabled{
     background-color:rgb(190, 130, 130)
 }
-.error{
+.Error{
     color:red;
     background-color:rgb(253,135,135,0.5);
     font-weight: 800;
     padding: 3px;
     border-radius: 5px;
     font-size: 14px;
+    text-align:center;
+    margin: 0;
+}
+.Success{
+    color: green;
+    background-color:rgb(119,255,133,0.5);
+    font-weight: 800;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align:center;
+    margin: 0;
 }

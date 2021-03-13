@@ -1,15 +1,15 @@
 import React from 'react'
 import styles from '.././styles/MakePost.module.css'
 import { BiError } from 'react-icons/bi';
+import { BsCheckCircle } from 'react-icons/bs';
 
 
-<<<<<<< HEAD
-function MakePost() {
-    const [error, seterror] =React.useState('')
-=======
+
+    
+
 function MakePost(props) {
-
->>>>>>> 83482a36512c0c26ae9572975ab753b8afa8cc52
+    const [error, seterror] =React.useState('')
+    const [Success, setSucces] = React.useState('')
     const [postData, setPostData] = React.useState({
         name: String,
         date: new Date(),
@@ -31,7 +31,7 @@ function MakePost(props) {
 
 
         if (postData.text === String || postData.title === String) {
-            seterror("Titel and text is required !")
+            seterror("Titel and text are required !")
         }
         else {
             fetch('/newPost', {
@@ -41,9 +41,7 @@ function MakePost(props) {
             }, [])
             .then(response => {
                 if (response) {
-                    //popup success
-                    //reload posts component
-                    window.location.reload()
+                    setSucces("Succesfull")
                 }
                 else {
                     //popup unknonwn error
@@ -70,7 +68,8 @@ function MakePost(props) {
     return (
         <div className={styles.PostInput}>
             <h1>Design the future</h1>
-            {error && <li className={styles.error}> {error} <BiError/></li>}
+            {error && <li className={styles.Error}> {error} <BiError/></li>}
+            {Success && <li className={styles.Success}> {Success}<BsCheckCircle/></li>}
             <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Name" name="name"></input></li>
             <li ><input className={styles.PostCity} onChange={handleChange} type="text" placeholder="Stadt" name="city"></input></li>
             <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Title" name="title"></input></li>
