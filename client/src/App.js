@@ -8,15 +8,19 @@ import Footer from './components/Footer.js'
 function App() {
 
   const [search, setSearch] = React.useState(null)
+  const [enter, setEnter] = React.useState(null)
 
   const FuncSearch = (data) => {
     setSearch(data)
   }
 
+  const FuncEnter = () => {
+    setEnter(true)
+  }
 
   return (
     <div className="App">      
-      <Header setSearch={FuncSearch}/>
+      <Header setSearch={FuncSearch} setEnter={FuncEnter}/>
       <Sidebar/>
       <ContentForm searchFor={search}/>
       <Footer/> 

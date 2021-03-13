@@ -15,11 +15,9 @@ const ContentForm = (props) => {
     }
 
     React.useEffect(() => {
-        rerenderPosts()
-    }, [props.searchFor])
+        // rerenderPosts()
+    })
 
-    
-    
     let formattedPosts
 
     if (!isLoading) {

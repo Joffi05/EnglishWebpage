@@ -7,9 +7,12 @@ import { BsCheckCircle } from 'react-icons/bs';
 
     
 
+
+
 function MakePost(props) {
     const [error, seterror] =React.useState('')
     const [Success, setSucces] = React.useState('')
+
     const [postData, setPostData] = React.useState({
         name: String,
         date: new Date(),
