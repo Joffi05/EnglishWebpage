@@ -41,7 +41,13 @@ app.get('/posts', async (req, res) => {
   )
   .catch(e => res.send(e))
 
-  res.json({posts: doc})
+  
+  // console.log(doc.data[0].data)
+  const docData = doc.data
+
+  console.log(docData)
+
+  res.json({posts: docData})
 })
 
 // POST endpoints

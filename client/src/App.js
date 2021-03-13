@@ -10,26 +10,7 @@ function App() {
       <Header/>
       <Sidebar/>
       <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <ContentForm/>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }

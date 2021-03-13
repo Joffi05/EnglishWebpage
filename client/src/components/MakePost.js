@@ -8,6 +8,7 @@ function MakePost() {
         name: "",
         date: new Date(),
         city: "",
+        title: "",
         text: ""
     })
 
@@ -35,7 +36,7 @@ function MakePost() {
             input => (input.value = "")
         )
 
-        if (postData.text === "" || postData.text === String) {
+        if ((postData.text === "" || postData.text === String) || (postData.title === "" || postData.title === String) ) {
             alert("Empty")
         }
         else {
@@ -55,6 +56,7 @@ function MakePost() {
             <h1>Design the future</h1>
            
             <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Name" name="name"></input></li>
+            <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Title" name="title"></input></li>
             <li ><textarea className={styles.PostText} onChange={handleChange} type="text" placeholder="Inhalt" name="text"></textarea></li>
             <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Stadt" name="city"></input></li>
             
