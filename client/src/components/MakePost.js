@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from '.././styles/MakePost.module.css'
-import FlashMessage from 'react-flash-message'
+import { BiError } from 'react-icons/bi';
 
 
 function MakePost() {
-
+    const [error, seterror] =React.useState('')
     const [postData, setPostData] = React.useState({
         name: String,
         date: new Date(),
@@ -26,7 +26,7 @@ function MakePost() {
 
 
         if (postData.text === String || postData.title === String) {
-            //popup "fill at least text and title"
+            seterror("Titel and text is required !")
         }
         else {
             fetch('/newPost', {
@@ -64,12 +64,11 @@ function MakePost() {
     return (
         <div className={styles.PostInput}>
             <h1>Design the future</h1>
-           
+            {error && <li className={styles.error}> {error} <BiError/></li>}
             <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Name" name="name"></input></li>
             <li ><input className={styles.PostCity} onChange={handleChange} type="text" placeholder="Stadt" name="city"></input></li>
             <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Title" name="title"></input></li>
             <li ><textarea className={styles.PostText} onChange={handleChange} type="text" placeholder="Inhalt" name="text"></textarea></li>
-            
             <li><button className={styles.PostButton} onClick={handleClick}>Send</button></li> 
         </div>
     )
