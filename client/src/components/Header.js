@@ -7,16 +7,14 @@ const Header = (props) => {
 
     const [search, setSearch] = React.useState(null)
 
+    const handleSubmit = () => {
+        props.setEnter()
+    }
+
     const handleChange = (event) => {
         setSearch(event.target.value)
         props.setSearch(search)
     }
-
-    const handleSubmit = () => {
-        
-    }
-
-
 
     return (
         <header className={styles.header}>

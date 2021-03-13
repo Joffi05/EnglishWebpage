@@ -3,13 +3,9 @@ import styles from '.././styles/MakePost.module.css'
 import { BiError } from 'react-icons/bi';
 
 
-<<<<<<< HEAD
-function MakePost() {
-    const [error, seterror] =React.useState('')
-=======
-function MakePost(props) {
 
->>>>>>> 83482a36512c0c26ae9572975ab753b8afa8cc52
+function MakePost(post) {
+    const [error, seterror] =React.useState('')
     const [postData, setPostData] = React.useState({
         name: String,
         date: new Date(),
