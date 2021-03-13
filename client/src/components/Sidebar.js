@@ -9,7 +9,7 @@ const Sidebar = () => {
             <form className={styles.Form}>
                 <MakePost/>
             </form>
-            <form>
+            <form className={styles.News}>
                 <News/>
             </form>
         </div>
