@@ -4,23 +4,27 @@ import { AiFillLike } from 'react-icons/ai';
 const ContentForm = (props) => {
 
     const [posts, setPosts] = React.useState(null)
-    const [isLoading, setIsLoading] = React.useState(true)
 
     //einbauen, dass er immer nur 10 fetched !!WICHTIG
-    const rerenderPosts = async () => {
+    const rerenderPosts = () => {
         fetch('/posts/' + props.searchFor)
         .then(res => res.json())
         .then((data) => setPosts(data.posts))
-        .then(() => setIsLoading(false))
     }
 
     React.useEffect(() => {
-        // rerenderPosts()
-    })
+        rerenderPosts()
+        console.log("1 in den chat")
+    }, [])
+
+
+    if (props.enter) {
+        console.log("Enter")
+    }
 
     let formattedPosts
 
-    if (!isLoading) {
+    if (posts) {
         // gigantic map function to wrap each post
         formattedPosts = posts.map(
             (data) =>
