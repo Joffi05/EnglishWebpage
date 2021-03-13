@@ -3,7 +3,7 @@ import styles from '.././styles/Sidebar.module.css'
 import MakePost from './MakePost.js'
 import News from './News.js'
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     return (
         <div className={styles.Sidebar}>
             <form className={styles.Form}>

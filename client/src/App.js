@@ -4,11 +4,19 @@ import Sidebar from './components/Sidebar.js'
 import ContentForm from './components/ContentForm.js'
 
 function App() {
+
+  const [search, setSearch] = React.useState(null)
+
+  const FuncSearch = (data) => {
+    setSearch(data)
+  }
+
+
   return (
     <div className="App">      
-      <Header/>
+      <Header setSearch={FuncSearch}/>
       <Sidebar/>
-      <ContentForm/>
+      <ContentForm searchFor={search}/>
       {/* <Footer/> */}
     </div>
   );

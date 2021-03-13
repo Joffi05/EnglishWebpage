@@ -29,7 +29,13 @@ const {
 
 // GET endpoints
 
-app.get('/posts', async (req, res) => {
+app.get('/posts/:content', async (req, res) => {
+
+  // Get(Ref(Collection('posts), req.params.content))
+
+  console.log(req.params.content)
+
+
 
   const doc = await client.query(
     mp(
@@ -61,7 +67,7 @@ app.post('/newPost', express.json(), async (req, res) => {
   )
   .catch(e => res.send(e))
 
-  res.send(doc)
+  res.send("Success")
 })
 
 
