@@ -30,10 +30,6 @@ const ContentForm = (props) => {
             (data) =>
                 <div className={styles.DIV}>
                     <form className={styles.Form}>
-                        <div className={styles.DIV}>
-                            <button className={styles.Contribute}><AiFillLike/></button> {/*Iwann like zähl funktion mit index und addLike request*/}
-                        </div>
-                        
                         <h1 className={styles.Titel}> {data.data.title} </h1> {/*Der Header ist für den Titel geacht*/}
                         <div className={styles.Date}> {new Date(data.data.date).toDateString()}</div>
                         <h2 className={styles.Name}> by: {data.data.name ? data.data.name : null} </h2> {/*Der Header ist für den Namen geacht*/}

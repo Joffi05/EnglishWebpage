@@ -23,9 +23,6 @@ function App() {
       <Header setSearch={FuncSearch} setEnter={FuncEnter}/>
       <Sidebar/>
       <ContentForm searchFor={search} enter={enter} setEnter={FuncEnter}/>
-      <Footer/> 
-
-      {/* <Footer/> */}
     </div>
   );
 }
