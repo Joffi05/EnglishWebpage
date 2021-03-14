@@ -6,22 +6,21 @@ import ContentForm from './components/ContentForm.js'
 function App() {
 
   const [search, setSearch] = React.useState(null)
-  const [enter, setEnter] = React.useState(null)
+  const [enter, setEnter] = React.useState(true)
 
   const FuncSearch = (data) => {
     setSearch(data)
   }
 
-  const FuncEnter = () => {
-    setEnter(true)
-    console.log('Enter')
+  const FuncEnter = (data) => {
+    setEnter(data)
   }
 
   return (
     <div className="App">      
       <Header setSearch={FuncSearch} setEnter={FuncEnter}/>
       <Sidebar/>
-      <ContentForm searchFor={search} enter={enter}/>
+      <ContentForm searchFor={search} enter={enter} setEnter={FuncEnter}/>
       {/* <Footer/> */}
     </div>
   );

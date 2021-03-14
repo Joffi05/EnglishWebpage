@@ -23,7 +23,8 @@ const {
   Ref,
   Call,
   Function: fn,
-  Map: mp
+  Map: mp,
+  Union
 } = faunadb.query
 
 
@@ -31,27 +32,45 @@ const {
 
 app.get('/posts/:content', async (req, res) => {
 
-  // Get(Ref(Collection('posts), req.params.content))
-
-  console.log(req.params.content)
-
-
-
-  const doc = await client.query(
-    mp(
-      Paginate(
-        Match(Index("all_depts"))
-      ),
-      Lambda("X", Get(Var("X")))
+  if(req.params.content === "null") {
+    const doc = await client.query(
+      mp(
+        Paginate(
+          Match(Index("all_depts"))
+        ),
+        Lambda("X", Get(Var("X")))
+      )
     )
-  )
-  .catch(e => res.send(e))
+    .catch(e => res.send(e))
 
-  
-  // console.log(doc.data[0].data)
-  const docData = doc.data
+    const docData = doc.data
 
-  res.json({posts: docData})
+    res.json({posts: docData})
+  }
+
+  else {
+    const doc = await client.query(
+      mp(
+        Paginate(
+          Union(
+            Match(Index("search_name"), req.params.content),
+            Match(Index("search_city"), req.params.content),
+            Match(Index("search_date"), req.params.content),
+            Match(Index("search_text"), req.params.content),
+            Match(Index("search_title"), req.params.content)
+          )
+        ),
+        Lambda("post", Get(Var("post"))
+        )
+      )
+    )
+    
+    .catch(e => res.send(e))
+
+    const docData = doc.data
+    res.json({posts: docData})
+
+  }
 })
 
 // POST endpoints

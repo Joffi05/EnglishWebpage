@@ -4,22 +4,22 @@ import { AiFillLike } from 'react-icons/ai';
 const ContentForm = (props) => {
 
     const [posts, setPosts] = React.useState(null)
-
+    
     //einbauen, dass er immer nur 10 fetched !!WICHTIG
-    const rerenderPosts = () => {
-        fetch('/posts/' + props.searchFor)
+    const rerenderPosts = (searchWord) => {
+
+        if(searchWord === "") {
+            searchWord = null
+        }
+
+        fetch('/posts/' + searchWord)
         .then(res => res.json())
         .then((data) => setPosts(data.posts))
     }
-
-    React.useEffect(() => {
-        rerenderPosts()
-        console.log("1 in den chat")
-    }, [])
-
-
-    if (props.enter) {
-        console.log("Enter")
+    
+    if(props.enter) {
+        props.setEnter(false)
+        rerenderPosts(props.searchFor)
     }
 
     let formattedPosts
