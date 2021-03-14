@@ -67,10 +67,10 @@ function MakePost(props) {
             <h1>Design the future</h1>
             {error && <li className={styles.Error}> {error} <BiError/></li>}
             {Success && <li className={styles.Success}> {Success}<BsCheckCircle/></li>}
-            <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Name" name="name"></input></li>
-            <li ><input className={styles.PostCity} onChange={handleChange} type="text" placeholder="Stadt" name="city"></input></li>
-            <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="Title" name="title"></input></li>
-            <li ><textarea className={styles.PostText} onChange={handleChange} type="text" placeholder="Inhalt" name="text"></textarea></li>
+            <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="name" name="name"></input></li>
+            <li ><input className={styles.PostCity} onChange={handleChange} type="text" placeholder="city" name="city"></input></li>
+            <li ><input className={styles.PostShort} onChange={handleChange} type="text" placeholder="title" name="title"></input></li>
+            <li ><textarea className={styles.PostText} onChange={handleChange} type="text" placeholder="text" name="text"></textarea></li>
             <li><button className={styles.PostButton} onClick={handleClick}>Send</button></li> 
         </div>
     )
